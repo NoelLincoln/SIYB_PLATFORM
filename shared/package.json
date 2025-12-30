@@ -1,0 +1,22 @@
+{
+  "name": "@siyb-platform/shared",
+  "version": "1.0.0",
+  "description": "Shared code for SIYB Platform frontend and backend",
+  "main": "index.ts",
+  "types": "index.ts",
+  "scripts": {
+    "build": "tsc",
+    "typecheck": "tsc --noEmit"
+  },
+  "keywords": [
+    "siyb",
+    "shared",
+    "types",
+    "constants"
+  ],
+  "author": "SIYB Platform Team",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^5.0.0"
+  }
+}

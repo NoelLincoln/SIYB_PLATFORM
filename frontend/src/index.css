@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+@theme {
+  --color-siyb-blue: #007bff;
+  --color-siyb-green: #28a745;
+  --color-siyb-orange: #fd7e14;
+  --color-siyb-purple: #6f42c1;
+}
+
+/* Custom SIYB Platform styles */
+:root {
+  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom component styles */
+.siyb-button {
+  @apply px-4 py-2 rounded-lg font-medium transition-colors duration-200;
+}
+
+.siyb-button-primary {
+  @apply bg-siyb-blue text-white hover:bg-blue-700;
+}
+
+.siyb-card {
+  @apply bg-white rounded-lg shadow-md p-6 border border-gray-200;
+}
