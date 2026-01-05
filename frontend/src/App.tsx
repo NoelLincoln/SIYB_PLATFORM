@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import './App.css'
+import Navbar from './components/Navbar'
 
 interface WelcomeData {
   message: string;
@@ -46,10 +46,11 @@ function App() {
       <header className="bg-white shadow-sm border-b">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <h1 className="text-3xl font-bold text-gray-900">
-            🚀 SIYB Platform
+            SIYB Platform
           </h1>
           <p className="text-gray-600 mt-2">Start and Improve Your Business Training Platform</p>
         </div>
+        <Navbar />
       </header>
 
       {/* Main Content */}
@@ -89,20 +90,6 @@ function App() {
                   </div>
                 ))}
               </div>
-            </div>
-
-            {/* API Status */}
-            <div className="siyb-card bg-blue-50">
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                🔗 API Connection Status
-              </h3>
-              <div className="flex items-center space-x-2">
-                <div className="w-3 h-3 bg-green-400 rounded-full"></div>
-                <span className="text-sm text-gray-700">Connected to Django Backend</span>
-              </div>
-              <p className="text-sm text-gray-600 mt-2">
-                Backend API: <code className="bg-gray-200 px-2 py-1 rounded">http://localhost:8000/api/</code>
-              </p>
             </div>
           </div>
         )}
