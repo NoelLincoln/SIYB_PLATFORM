@@ -1,11 +1,13 @@
 import { useState } from 'react'
-import { Menu } from 'lucide-react'
+import { Menu, ChevronDown } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import {
   NavigationMenu,
   NavigationMenuList,
   NavigationMenuItem,
   NavigationMenuLink,
+  NavigationMenuTrigger,
+  NavigationMenuContent,
 } from '@/components/ui/navigation-menu'
 import {
   Sheet,
@@ -15,8 +17,50 @@ import {
 
 const navItems = [
   { label: 'Home', href: '/' },
-  { label: 'Training Modules', href: '/modules' },
   { label: 'About', href: '/about' },
+]
+
+const modules = [
+  {
+    id: 'gyb',
+    label: 'Generate Your Business Idea',
+    shortLabel: 'GYB',
+    icon: '🌱',
+    description: 'Develop a concrete business idea with self-assessment and idea analysis',
+    href: '/modules/gyb'
+  },
+  {
+    id: 'syb',
+    label: 'Start Your Business',
+    shortLabel: 'SYB',
+    icon: '📈',
+    description: 'Actualize your business idea with systematic business planning',
+    href: '/modules/syb'
+  },
+  {
+    id: 'iyb',
+    label: 'Improve Your Business',
+    shortLabel: 'IYB',
+    icon: '💼',
+    description: 'Master business management principles for existing businesses',
+    href: '/modules/iyb'
+  },
+  {
+    id: 'eyb',
+    label: 'Expand Your Business',
+    shortLabel: 'EYB',
+    icon: '🏆',
+    description: 'Scale and grow your business with strategic expansion tools',
+    href: '/modules/eyb'
+  },
+  {
+    id: 'game',
+    label: 'SIYB Game',
+    shortLabel: 'Game',
+    icon: '🎮',
+    description: 'Practical simulation to understand business realities',
+    href: '/modules/game'
+  },
 ]
 
 export default function Navbar() {
@@ -46,6 +90,32 @@ export default function Navbar() {
                 </NavigationMenuLink>
               </NavigationMenuItem>
             ))}
+            
+            {/* Training Modules Dropdown */}
+            <NavigationMenuItem>
+              <NavigationMenuTrigger className="text-sm font-medium">
+                Training Modules
+              </NavigationMenuTrigger>
+              <NavigationMenuContent className="bg-white">
+                <div className="p-6 space-y-3 w-max">
+                  {modules.map((module) => (
+                    <a
+                      key={module.id}
+                      href={module.href}
+                      className="block p-3 rounded-lg hover:bg-accent transition-colors border border-transparent hover:border-primary"
+                    >
+                      <div className="flex items-start gap-3">
+                        <span className="text-2xl">{module.icon}</span>
+                        <div className="flex-1">
+                          <h4 className="font-semibold text-sm text-gray-900">{module.label}</h4>
+                          <p className="text-xs text-gray-600 mt-1">{module.description}</p>
+                        </div>
+                      </div>
+                    </a>
+                  ))}
+                </div>
+              </NavigationMenuContent>
+            </NavigationMenuItem>
           </NavigationMenuList>
         </NavigationMenu>
 
@@ -67,7 +137,7 @@ export default function Navbar() {
               <span className="sr-only">Toggle menu</span>
             </Button>
           </SheetTrigger>
-          <SheetContent side="right" className="w-[280px] bg-white">
+          <SheetContent side="right" className="w-[280px] bg-white overflow-y-auto">
             <div className="flex flex-col gap-6 mt-8">
               {/* Mobile Nav */}
               <nav className="flex flex-col gap-3">
@@ -82,6 +152,29 @@ export default function Navbar() {
                   </a>
                 ))}
               </nav>
+
+              {/* Mobile Training Modules */}
+              <div className="border-t pt-4">
+                <h3 className="text-sm font-semibold text-gray-900 mb-3">Training Modules</h3>
+                <nav className="flex flex-col gap-2">
+                  {modules.map((module) => (
+                    <a
+                      key={module.id}
+                      href={module.href}
+                      onClick={() => setOpen(false)}
+                      className="p-2 rounded-lg hover:bg-accent transition-colors"
+                    >
+                      <div className="flex items-start gap-2">
+                        <span className="text-lg">{module.icon}</span>
+                        <div className="flex-1">
+                          <p className="text-sm font-medium text-gray-900">{module.label}</p>
+                          <p className="text-xs text-gray-600">{module.description}</p>
+                        </div>
+                      </div>
+                    </a>
+                  ))}
+                </nav>
+              </div>
 
               {/* Mobile Auth Actions */}
               <div className="border-t pt-4 flex flex-col gap-2">
