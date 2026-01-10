@@ -2,8 +2,10 @@
 set -euo pipefail
 
 ENV_TARGET="${1:-}"
-if [[ -z "$ENV_TARGET" ]]; then
-  echo "Usage: $0 <uat|prod>" >&2
+VERSION="${2:-}"
+
+if [[ -z "$ENV_TARGET" || -z "$VERSION" ]]; then
+  echo "Usage: $0 <uat|prod> <version>" >&2
   exit 1
 fi
 
@@ -36,10 +38,29 @@ if [[ -n "$(git status --porcelain)" ]]; then
   exit 1
 fi
 
-echo "[release] Starting $ENV_TARGET release on branch $CURRENT_BRANCH..."
+echo "[release] Starting $ENV_TARGET release on branch $CURRENT_BRANCH (version $VERSION)..."
 
-"$SCRIPT_DIR/release-frontend.sh" "$ENV_TARGET"
-"$SCRIPT_DIR/release-backend.sh" "$ENV_TARGET"
+"$SCRIPT_DIR/release-frontend.sh" "$ENV_TARGET" "$VERSION"
+"$SCRIPT_DIR/release-backend.sh" "$ENV_TARGET" "$VERSION"
 
 echo "[release] Frontend and backend checks completed."
-echo "[release] Now update CHANGELOGs with release notes and create a git tag if desired."
+
+# Create tags for this release if they do not already exist
+FRONTEND_TAG="frontend-v$VERSION"
+BACKEND_TAG="backend-v$VERSION"
+
+if git rev-parse -q --verify "refs/tags/$FRONTEND_TAG" >/dev/null; then
+  echo "[release] Tag $FRONTEND_TAG already exists, not creating."
+else
+  git tag "$FRONTEND_TAG"
+  echo "[release] Created tag $FRONTEND_TAG."
+fi
+
+if git rev-parse -q --verify "refs/tags/$BACKEND_TAG" >/dev/null; then
+  echo "[release] Tag $BACKEND_TAG already exists, not creating."
+else
+  git tag "$BACKEND_TAG"
+  echo "[release] Created tag $BACKEND_TAG."
+fi
+
+echo "[release] Release $VERSION complete. Push tags with 'git push --tags' if desired."
