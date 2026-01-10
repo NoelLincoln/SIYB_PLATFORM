@@ -1,0 +1,33 @@
+#!/bin/sh
+
+echo "Running frontend format:check and lint..."
+cd frontend || exit 1
+npm run format:check
+format_status=$?
+if [ $format_status -ne 0 ]; then
+  echo "Frontend format:check failed. Run 'cd frontend && npm run format' to fix."
+  exit $format_status
+fi
+
+npm run lint
+lint_status=$?
+if [ $lint_status -ne 0 ]; then
+  echo "Frontend lint failed."
+  exit $lint_status
+fi
+
+cd ..
+
+echo "Running backend tests..."
+cd backend || exit 1
+../.venv/bin/python manage.py test
+backend_status=$?
+
+cd ..
+if [ $backend_status -ne 0 ]; then
+  echo "Backend tests failed."
+  exit $backend_status
+fi
+
+echo "All checks passed!"
+exit 0
