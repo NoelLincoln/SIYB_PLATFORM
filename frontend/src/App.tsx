@@ -11,10 +11,6 @@ interface WelcomeData {
     EYB: string;
     SIYB_Game: string;
   };
-<<<<<<< Updated upstream
-  status: string;
-}
-=======
 }
 
 const moduleDescriptions: Record<string, { title: string; icon: string; fullDescription: string }> =
@@ -50,7 +46,6 @@ const moduleDescriptions: Record<string, { title: string; icon: string; fullDesc
         'A practical simulation tool that helps entrepreneurs understand the realities of starting and running a business through interactive, hands-on learning experiences.',
     },
   };
->>>>>>> Stashed changes
 
 function App() {
   const [welcomeData, setWelcomeData] = useState<WelcomeData | null>(null);
@@ -81,12 +76,6 @@ function App() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
-<<<<<<< Updated upstream
-      <header className="bg-white shadow-sm border-b">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <h1 className="text-3xl font-bold text-gray-900">
-            SIYB Platform
-=======
       <Navbar />
 
       {/* Hero Section */}
@@ -95,31 +84,14 @@ function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
           <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
             Welcome to SIYB Platform!
->>>>>>> Stashed changes
           </h1>
-          <p className="text-gray-600 mt-2">Start and Improve Your Business Training Platform</p>
+          <p className="text-gray-200 text-xl">Start and Improve Your Business Training Platform</p>
         </div>
-        <Navbar />
-      </header>
+      </section>
 
       {/* Main Content */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {welcomeData && (
-<<<<<<< Updated upstream
-          <div className="space-y-8">
-            {/* Welcome Message */}
-            <div className="siyb-card">
-              <h2 className="text-2xl font-semibold text-gray-900 mb-4">
-                {welcomeData.message}
-              </h2>
-              <p className="text-gray-700 text-lg">
-                {welcomeData.description}
-              </p>
-              <div className="mt-4">
-                <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-800">
-                  Status: {welcomeData.status}
-                </span>
-=======
           <div className="space-y-12">
             {/* About SIYB Section */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
@@ -172,29 +144,11 @@ function App() {
                     </p>
                   </div>
                 </div>
->>>>>>> Stashed changes
               </div>
             </div>
 
             {/* Training Modules */}
             <div>
-<<<<<<< Updated upstream
-              <h3 className="text-xl font-semibold text-gray-900 mb-6">Training Modules</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {Object.entries(welcomeData.modules).map(([key, value]) => (
-                  <div key={key} className="siyb-card hover:shadow-lg transition-shadow">
-                    <div className="flex items-center space-x-3">
-                      <div className="w-10 h-10 bg-siyb-blue rounded-lg flex items-center justify-center text-white font-semibold">
-                        {key === 'SIYB_Game' ? '🎮' : key}
-                      </div>
-                      <div>
-                        <h4 className="font-semibold text-gray-900">{key}</h4>
-                        <p className="text-sm text-gray-600">{value}</p>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-=======
               <div className="mb-8">
                 <h2 className="text-3xl font-bold text-gray-900 mb-2">Training Modules</h2>
                 <p className="text-gray-600">
@@ -231,7 +185,6 @@ function App() {
                     </div>
                   );
                 })}
->>>>>>> Stashed changes
               </div>
             </div>
           </div>

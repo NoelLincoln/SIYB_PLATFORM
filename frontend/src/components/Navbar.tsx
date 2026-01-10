@@ -1,30 +1,15 @@
-<<<<<<< Updated upstream
-import { useState } from 'react'
-import { Menu } from 'lucide-react'
-import { Button } from '@/components/ui/button'
-=======
 import { useState } from 'react';
 import { Menu } from 'lucide-react';
 import { Button } from '@/components/ui/button';
->>>>>>> Stashed changes
 import {
   NavigationMenu,
   NavigationMenuList,
   NavigationMenuItem,
   NavigationMenuLink,
-<<<<<<< Updated upstream
-} from '@/components/ui/navigation-menu'
-import {
-  Sheet,
-  SheetContent,
-  SheetTrigger,
-} from '@/components/ui/sheet'
-=======
   NavigationMenuTrigger,
   NavigationMenuContent,
 } from '@/components/ui/navigation-menu';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
->>>>>>> Stashed changes
 
 const navItems = [
   { label: 'Home', href: '/' },
@@ -32,8 +17,6 @@ const navItems = [
   { label: 'About', href: '/about' },
 ];
 
-<<<<<<< Updated upstream
-=======
 const modules = [
   {
     id: 'gyb',
@@ -76,8 +59,6 @@ const modules = [
     href: '/modules/game',
   },
 ];
-
->>>>>>> Stashed changes
 export default function Navbar() {
   const [open, setOpen] = useState(false);
 
@@ -105,8 +86,6 @@ export default function Navbar() {
                 </NavigationMenuLink>
               </NavigationMenuItem>
             ))}
-<<<<<<< Updated upstream
-=======
 
             {/* Training Modules Dropdown */}
             <NavigationMenuItem>
@@ -133,7 +112,6 @@ export default function Navbar() {
                 </div>
               </NavigationMenuContent>
             </NavigationMenuItem>
->>>>>>> Stashed changes
           </NavigationMenuList>
         </NavigationMenu>
 
