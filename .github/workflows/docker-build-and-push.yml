@@ -7,8 +7,7 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  REPOSITORY: ${{ github.repository_owner }}/${{ github.event.repository.name }}
-  
+
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
@@ -19,6 +18,12 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+
+      # lowercase owner + repo
+      - name: Normalize image repository name
+        run: |
+          echo "OWNER_LOWER=$(echo '${{ github.repository_owner }}' | tr '[:upper:]' '[:lower:]')" >> $GITHUB_ENV
+          echo "REPO_LOWER=$(echo '${{ github.event.repository.name }}' | tr '[:upper:]' '[:lower:]')" >> $GITHUB_ENV
 
       - name: Log in to GitHub Container Registry
         uses: docker/login-action@v3
@@ -34,8 +39,8 @@ jobs:
           file: ./backend/Dockerfile
           push: true
           tags: |
-            ${{ env.REGISTRY }}/${{ env.REPOSITORY }}-backend:latest-${{ github.ref_name }}
-            ${{ env.REGISTRY }}/${{ env.REPOSITORY }}-backend:${{ github.sha }}
+            ${{ env.REGISTRY }}/${{ env.OWNER_LOWER }}/${{ env.REPO_LOWER }}-backend:latest-${{ github.ref_name }}
+            ${{ env.REGISTRY }}/${{ env.OWNER_LOWER }}/${{ env.REPO_LOWER }}-backend:${{ github.sha }}
 
       - name: Build and push frontend image
         uses: docker/build-push-action@v6
@@ -44,5 +49,5 @@ jobs:
           file: ./frontend/Dockerfile
           push: true
           tags: |
-            ${{ env.REGISTRY }}/${{ env.REPOSITORY }}-frontend:latest-${{ github.ref_name }}
-            ${{ env.REGISTRY }}/${{ env.REPOSITORY }}-frontend:${{ github.sha }}
+            ${{ env.REGISTRY }}/${{ env.OWNER_LOWER }}/${{ env.REPO_LOWER }}-frontend:latest-${{ github.ref_name }}
+            ${{ env.REGISTRY }}/${{ env.OWNER_LOWER }}/${{ env.REPO_LOWER }}-frontend:${{ github.sha }}
