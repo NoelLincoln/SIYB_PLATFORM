@@ -15,12 +15,12 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/*
 
 # Install Python dependencies
-COPY backend/requirements.txt ./requirements.txt
+COPY requirements.txt ./requirements.txt
 RUN pip install --upgrade pip \
     && pip install -r requirements.txt
 
 # Copy project
-COPY backend/ .
+COPY . .
 
 # Collect static files (safe if no static configured)
 RUN python manage.py collectstatic --noinput || true
