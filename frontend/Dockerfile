@@ -4,10 +4,10 @@
 FROM node:18-alpine AS build
 WORKDIR /app
 
-COPY frontend/package.json frontend/package-lock.json* frontend/pnpm-lock.yaml* frontend/yarn.lock* ./
+COPY package.json package-lock.json* pnpm-lock.yaml* yarn.lock* ./
 RUN npm install
 
-COPY frontend/ ./
+COPY . ./
 RUN npm run build
 
 # Runtime stage (nginx serving static files)
