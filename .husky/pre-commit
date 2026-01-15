@@ -1,0 +1,25 @@
+#!/bin/sh
+
+echo "Running frontend lint-staged..."
+cd frontend || exit 1
+npx lint-staged
+frontend_status=$?
+
+cd ..
+if [ $frontend_status -ne 0 ]; then
+  echo "Frontend lint-staged failed."
+  exit $frontend_status
+fi
+
+echo "Running backend checks (manage.py check)..."
+cd backend || exit 1
+../.venv/bin/python manage.py check
+backend_status=$?
+
+cd ..
+if [ $backend_status -ne 0 ]; then
+  echo "Backend checks failed."
+  exit $backend_status
+fi
+
+exit 0
