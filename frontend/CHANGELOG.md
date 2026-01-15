@@ -15,5 +15,4 @@
 - feat: implement responsive navbar with shadcn/ui components
 - feat: Complete SIYB platform setup with Django backend and React frontend
 
-
 This file documents notable changes to the SIYB frontend.
