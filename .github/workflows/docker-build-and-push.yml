@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 env:
-  REGISTRY: ghcr.io
+  REGISTRY: docker.io
 
 jobs:
   build-and-push:
@@ -25,12 +25,11 @@ jobs:
           echo "OWNER_LOWER=$(echo '${{ github.repository_owner }}' | tr '[:upper:]' '[:lower:]')" >> $GITHUB_ENV
           echo "REPO_LOWER=$(echo '${{ github.event.repository.name }}' | tr '[:upper:]' '[:lower:]')" >> $GITHUB_ENV
 
-      - name: Log in to GitHub Container Registry
+      - name: Log in to Docker Hub
         uses: docker/login-action@v3
         with:
-          registry: ${{ env.REGISTRY }}
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+          username: ${{ secrets.DOCKER_HUB_USERNAME }}
+          password: ${{ secrets.DOCKER_HUB_TOKEN }}
 
       - name: Build and push backend image
         uses: docker/build-push-action@v6
@@ -39,8 +38,8 @@ jobs:
           file: ./backend/Dockerfile
           push: true
           tags: |
-            ${{ env.REGISTRY }}/${{ env.OWNER_LOWER }}/${{ env.REPO_LOWER }}-backend:latest-${{ github.ref_name }}
-            ${{ env.REGISTRY }}/${{ env.OWNER_LOWER }}/${{ env.REPO_LOWER }}-backend:${{ github.sha }}
+            ${{ secrets.DOCKER_HUB_USERNAME }}/${{ env.REPO_LOWER }}-backend:latest-${{ github.ref_name }}
+            ${{ secrets.DOCKER_HUB_USERNAME }}/${{ env.REPO_LOWER }}-backend:${{ github.sha }}
 
       - name: Build and push frontend image
         uses: docker/build-push-action@v6
@@ -49,5 +48,5 @@ jobs:
           file: ./frontend/Dockerfile
           push: true
           tags: |
-            ${{ env.REGISTRY }}/${{ env.OWNER_LOWER }}/${{ env.REPO_LOWER }}-frontend:latest-${{ github.ref_name }}
-            ${{ env.REGISTRY }}/${{ env.OWNER_LOWER }}/${{ env.REPO_LOWER }}-frontend:${{ github.sha }}
+            ${{ secrets.DOCKER_HUB_USERNAME }}/${{ env.REPO_LOWER }}-frontend:latest-${{ github.ref_name }}
+            ${{ secrets.DOCKER_HUB_USERNAME }}/${{ env.REPO_LOWER }}-frontend:${{ github.sha }}
