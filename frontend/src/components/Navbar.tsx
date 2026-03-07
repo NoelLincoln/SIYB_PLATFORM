@@ -52,7 +52,7 @@ const modules = [
   },
   {
     id: 'game',
-    label: 'SIYB Game',
+    label: 'Business Simulation',
     shortLabel: 'Game',
     icon: '🎮',
     description: 'Practical simulation to understand business realities',
@@ -68,9 +68,9 @@ export default function Navbar() {
         {/* Brand */}
         <a href="/" className="flex items-center space-x-2 flex-shrink-0">
           <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-            <span className="text-white font-bold text-sm">SIYB</span>
+            <span className="text-white font-bold text-sm">MSC</span>
           </div>
-          <span className="hidden sm:inline font-bold text-lg">SIYB Platform</span>
+          <span className="hidden sm:inline font-bold text-lg">Mustard Steps Consulting</span>
         </a>
 
         {/* Desktop Navigation */}

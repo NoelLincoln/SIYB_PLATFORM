@@ -8,10 +8,10 @@ export default {
   theme: {
     extend: {
       colors: {
-        'siyb-blue': '#007bff',
-        'siyb-green': '#28a745',
-        'siyb-orange': '#fd7e14',
-        'siyb-purple': '#6f42c1',
+        'msc-blue': '#007bff',
+        'msc-green': '#28a745',
+        'msc-orange': '#fd7e14',
+        'msc-purple': '#6f42c1',
       },
     },
   },
