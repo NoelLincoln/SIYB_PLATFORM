@@ -1,5 +1,5 @@
 from django.apps import AppConfig
 
 
-class SiybGameConfig(AppConfig):
+class MustardStepsGameConfig(AppConfig):
     name = 'siyb_game'

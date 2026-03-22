@@ -1,5 +1,5 @@
 """
-URL configuration for siyb_platform project.
+URL configuration for Mustard Steps Consulting project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/6.0/topics/http/urls/
@@ -23,7 +23,7 @@ def api_health(request):
     """Simple health check endpoint"""
     return JsonResponse({
         'status': 'healthy',
-        'message': 'SIYB Platform API is running!',
+        'message': 'Mustard Steps Consulting API is running!',
         'version': '1.0.0'
     })
 

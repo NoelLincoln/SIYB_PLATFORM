@@ -9,7 +9,7 @@ interface WelcomeData {
     SYB: string;
     IYB: string;
     EYB: string;
-    SIYB_Game: string;
+    Mustard_Steps_Game: string;
   };
 }
 
@@ -39,8 +39,8 @@ const moduleDescriptions: Record<string, { title: string; icon: string; fullDesc
       fullDescription:
         'Provides growth-oriented small and medium enterprises with practical tools for business expansion. It focuses on business strategy and actionable steps to scale and grow your business effectively.',
     },
-    SIYB_Game: {
-      title: 'SIYB Game',
+    Mustard_Steps_Game: {
+      title: 'Mustard Steps Game',
       icon: '🎮',
       fullDescription:
         'A practical simulation tool that helps entrepreneurs understand the realities of starting and running a business through interactive, hands-on learning experiences.',
@@ -68,7 +68,7 @@ function App() {
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-siyb-blue"></div>
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-msc-blue"></div>
       </div>
     );
   }
@@ -79,13 +79,15 @@ function App() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-slate-800 via-siyb-blue to-slate-800 text-white relative overflow-hidden">
+      <section className="bg-gradient-to-r from-slate-800 via-msc-blue to-slate-800 text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-black/30"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
           <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-            Welcome to SIYB Platform!
+            Welcome to Mustard Steps Consulting!
           </h1>
-          <p className="text-gray-200 text-xl">Start and Improve Your Business Training Platform</p>
+          <p className="text-gray-200 text-xl">
+            Professional Business Training & Consulting Services
+          </p>
         </div>
       </section>
 
@@ -93,15 +95,17 @@ function App() {
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {welcomeData && (
           <div className="space-y-12">
-            {/* About SIYB Section */}
+            {/* About Mustard Steps Consulting Section */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
               {/* Left Content */}
               <div>
-                <h2 className="text-4xl font-bold text-gray-900 mb-6">What is SIYB?</h2>
+                <h2 className="text-4xl font-bold text-gray-900 mb-6">
+                  What is Mustard Steps Consulting?
+                </h2>
                 <p className="text-gray-700 text-lg mb-4 leading-relaxed">
-                  SIYB (Start and Improve Your Business) is a comprehensive training program
-                  designed to help entrepreneurs and small business owners develop essential
-                  business skills.
+                  Mustard Steps Consulting is a comprehensive business training and consulting
+                  program designed to help entrepreneurs and small business owners develop essential
+                  business skills and grow their ventures.
                 </p>
                 <p className="text-gray-700 text-lg mb-6 leading-relaxed">
                   Our curriculum covers everything from business planning and financial management
@@ -110,21 +114,21 @@ function App() {
                 </p>
                 <div className="space-y-3">
                   <div className="flex items-start gap-3">
-                    <span className="text-siyb-blue text-2xl mt-1">✓</span>
+                    <span className="text-msc-blue text-2xl mt-1">✓</span>
                     <div>
                       <h3 className="font-semibold text-gray-900">Practical Skills</h3>
                       <p className="text-gray-600">Learn actionable business strategies</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
-                    <span className="text-siyb-green text-2xl mt-1">✓</span>
+                    <span className="text-msc-green text-2xl mt-1">✓</span>
                     <div>
                       <h3 className="font-semibold text-gray-900">Expert Guidance</h3>
                       <p className="text-gray-600">Train with industry professionals</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
-                    <span className="text-siyb-orange text-2xl mt-1">✓</span>
+                    <span className="text-msc-orange text-2xl mt-1">✓</span>
                     <div>
                       <h3 className="font-semibold text-gray-900">Global Network</h3>
                       <p className="text-gray-600">Connect with entrepreneurs worldwide</p>
@@ -135,7 +139,7 @@ function App() {
 
               {/* Right Illustration */}
               <div className="flex items-center justify-center">
-                <div className="w-full h-80 bg-gradient-to-br from-siyb-blue/10 to-siyb-green/10 rounded-2xl border-2 border-dashed border-siyb-blue/30 flex items-center justify-center">
+                <div className="w-full h-80 bg-gradient-to-br from-msc-blue/10 to-msc-green/10 rounded-2xl border-2 border-dashed border-msc-blue/30 flex items-center justify-center">
                   <div className="text-center">
                     <div className="text-6xl mb-4">🚀</div>
                     <p className="text-gray-600 font-semibold">Add your illustration here</p>
@@ -154,7 +158,7 @@ function App() {
                 <p className="text-gray-600">
                   Explore our comprehensive business training programs
                 </p>
-                <div className="h-1 w-20 bg-siyb-blue rounded-full mt-4"></div>
+                <div className="h-1 w-20 bg-msc-blue rounded-full mt-4"></div>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -163,10 +167,10 @@ function App() {
                   return (
                     <div
                       key={key}
-                      className="group bg-white rounded-xl shadow-md hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100 hover:border-siyb-blue"
+                      className="group bg-white rounded-xl shadow-md hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100 hover:border-msc-blue"
                     >
                       {/* Card Header with Icon */}
-                      <div className="bg-gradient-to-r from-siyb-blue to-siyb-green p-8 text-white">
+                      <div className="bg-gradient-to-r from-msc-blue to-msc-green p-8 text-white">
                         <div className="w-16 h-16 bg-white/20 rounded-lg flex items-center justify-center text-3xl mb-4 group-hover:scale-110 transition-transform">
                           {moduleInfo.icon}
                         </div>
@@ -195,4 +199,3 @@ function App() {
 }
 
 export default App;
-// test

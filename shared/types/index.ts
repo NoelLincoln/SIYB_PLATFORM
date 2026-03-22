@@ -1,4 +1,4 @@
-// Shared TypeScript types for SIYB Platform
+// Shared TypeScript types for Mustard Steps Consulting Platform
 // These types should match your Django models
 
 export interface User {
@@ -10,7 +10,7 @@ export interface User {
   date_joined: string;
 }
 
-export interface SIYBModule {
+export interface MustardStepsModule {
   id: number;
   name: string;
   description: string;
@@ -18,20 +18,20 @@ export interface SIYBModule {
   order: number;
 }
 
-// SIYB Business Modules
-export interface GYBModule extends SIYBModule {
+// Mustard Steps Consulting Business Modules
+export interface GYBModule extends MustardStepsModule {
   type: 'gyb';
 }
 
-export interface SYBModule extends SIYBModule {
+export interface SYBModule extends MustardStepsModule {
   type: 'syb';
 }
 
-export interface IYBModule extends SIYBModule {
+export interface IYBModule extends MustardStepsModule {
   type: 'iyb';
 }
 
-export interface EYBModule extends SIYBModule {
+export interface EYBModule extends MustardStepsModule {
   type: 'eyb';
 }
 
