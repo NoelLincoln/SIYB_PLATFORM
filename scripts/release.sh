@@ -1,24 +1,12 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-ENV_TARGET="${1:-}"
-VERSION="${2:-}"
+VERSION="${1:-}"
 
-if [[ -z "$ENV_TARGET" || -z "$VERSION" ]]; then
-  echo "Usage: $0 <uat|prod> <version>" >&2
+if [[ -z "$VERSION" ]]; then
+  echo "Usage: $0 <version>" >&2
+  echo "Example: $0 1.2.0" >&2
   exit 1
-fi
-
-if [[ "$ENV_TARGET" != "uat" && "$ENV_TARGET" != "prod" ]]; then
-  echo "Invalid env: $ENV_TARGET (expected 'uat' or 'prod')" >&2
-  exit 1
-fi
-
-# Map env to expected branch
-if [[ "$ENV_TARGET" == "uat" ]]; then
-  EXPECTED_BRANCH="uat"
-else
-  EXPECTED_BRANCH="main"
 fi
 
 # Ensure we are in repo root
@@ -27,8 +15,11 @@ REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 cd "$REPO_ROOT"
 
 CURRENT_BRANCH="$(git rev-parse --abbrev-ref HEAD)"
-if [[ "$CURRENT_BRANCH" != "$EXPECTED_BRANCH" ]]; then
-  echo "You are on branch '$CURRENT_BRANCH'. For a $ENV_TARGET release, checkout '$EXPECTED_BRANCH' first." >&2
+
+# Must be run on a release/* branch checked out from develop
+if [[ "$CURRENT_BRANCH" != release/* ]]; then
+  echo "You are on branch '$CURRENT_BRANCH'." >&2
+  echo "Create and checkout a release branch first: git checkout -b release/$VERSION" >&2
   exit 1
 fi
 
@@ -38,10 +29,10 @@ if [[ -n "$(git status --porcelain)" ]]; then
   exit 1
 fi
 
-echo "[release] Starting $ENV_TARGET release on branch $CURRENT_BRANCH (version $VERSION)..."
+echo "[release] Starting release on branch $CURRENT_BRANCH (version $VERSION)..."
 
-"$SCRIPT_DIR/release-frontend.sh" "$ENV_TARGET" "$VERSION"
-"$SCRIPT_DIR/release-backend.sh" "$ENV_TARGET" "$VERSION"
+"$SCRIPT_DIR/release-frontend.sh" "$VERSION"
+"$SCRIPT_DIR/release-backend.sh" "$VERSION"
 
 echo "[release] Frontend and backend checks completed."
 
@@ -63,4 +54,10 @@ else
   echo "[release] Created tag $BACKEND_TAG."
 fi
 
-echo "[release] Release $VERSION complete. Push tags with 'git push --tags' if desired."
+echo ""
+echo "[release] Release $VERSION complete."
+echo "[release] Next steps:"
+echo "  1. git add backend/CHANGELOG.md frontend/CHANGELOG.md"
+echo "  2. git commit -m 'chore: release $VERSION - update changelogs'"
+echo "  3. git push origin $CURRENT_BRANCH --tags"
+echo "  4. Merge $CURRENT_BRANCH → develop → uat → main"
