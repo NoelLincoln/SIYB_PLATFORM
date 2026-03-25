@@ -9,16 +9,16 @@ from django.contrib.auth.models import User
 @api_view(['GET'])
 @permission_classes([AllowAny])
 def welcome(request):
-    """Welcome endpoint for SIYB platform"""
+    """Welcome endpoint for Mustard Steps Consulting platform"""
     return Response({
-        'message': 'Welcome to SIYB Platform!',
+        'message': 'Welcome to Mustard Steps Consulting!',
         'description': 'Start and Improve Your Business training platform',
         'modules': {
             'GYB': 'Generate Your Business Idea',
             'SYB': 'Start Your Business', 
             'IYB': 'Improve Your Business',
             'EYB': 'Expand Your Business',
-            'SIYB_Game': 'Business Simulation Game'
+            'Mustard_Steps_Game': 'Business Simulation Game'
         },
         'status': 'Development'
     })

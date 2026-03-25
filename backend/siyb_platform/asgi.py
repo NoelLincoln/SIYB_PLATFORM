@@ -1,5 +1,5 @@
 """
-ASGI config for siyb_platform project.
+ASGI config for Mustard Steps Consulting project.
 
 It exposes the ASGI callable as a module-level variable named ``application``.
 

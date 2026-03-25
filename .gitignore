@@ -263,3 +263,6 @@ logs/
 # Backup files
 *.bak
 *.backup
+
+# Local planning docs — kept in house, not for version control
+REQUIREMENTS.md

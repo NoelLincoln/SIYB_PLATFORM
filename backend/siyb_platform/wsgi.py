@@ -1,5 +1,5 @@
 """
-WSGI config for siyb_platform project.
+WSGI config for Mustard Steps Consulting project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 

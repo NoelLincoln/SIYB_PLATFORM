@@ -1,4 +1,4 @@
-# Shared Code for SIYB Platform
+# Shared Code for Mustard Steps Consulting Platform
 
 This directory contains code shared between the Django backend and React frontend.
 
@@ -22,7 +22,7 @@ shared/
 
 ### In React Frontend:
 ```typescript
-import { User, SIYB_MODULES, isValidEmail } from '../shared';
+import { User, MUSTARD_STEPS_MODULES, isValidEmail } from '../shared';
 ```
 
 ### In Django Backend:
