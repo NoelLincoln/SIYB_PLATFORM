@@ -1,7 +1,7 @@
 {
-  "name": "@siyb-platform/shared",
+  "name": "@mustard-steps-consulting/shared",
   "version": "1.0.0",
-  "description": "Shared code for SIYB Platform frontend and backend",
+  "description": "Shared code for Mustard Steps Consulting Platform - frontend and backend",
   "main": "index.ts",
   "types": "index.ts",
   "scripts": {
@@ -9,12 +9,13 @@
     "typecheck": "tsc --noEmit"
   },
   "keywords": [
-    "siyb",
+    "mustard-steps",
+    "consulting",
     "shared",
     "types",
     "constants"
   ],
-  "author": "SIYB Platform Team",
+  "author": "Mustard Steps Consulting Team",
   "license": "MIT",
   "devDependencies": {
     "typescript": "^5.0.0"

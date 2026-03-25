@@ -1,8 +1,8 @@
 <a name="readme-top"></a>
 
 <div align="center">
-  <h1><b>🚀 SIYB Platform</b></h1>
-  <h3>Start and Improve Your Business Training Platform</h3>
+  <h1><b>🚀 Mustard Steps Consulting Platform</b></h1>
+  <h3>Professional Business Training & Consulting Services</h3>
   <p>Empowering entrepreneurs through comprehensive business training modules</p>
 </div>
 
@@ -33,9 +33,9 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 SIYB Platform <a name="about-project"></a>
+# 📖 Mustard Steps Consulting Platform <a name="about-project"></a>
 
-**SIYB Platform** is a comprehensive business training platform designed to help entrepreneurs start and improve their businesses. The platform offers four core training modules along with an interactive business simulation game, providing a complete learning ecosystem for aspiring and existing business owners.
+**Mustard Steps Consulting Platform** is a comprehensive business training and consulting platform designed to help entrepreneurs start and improve their businesses. The platform offers four core training modules along with an interactive business simulation game, providing a complete learning ecosystem for aspiring and existing business owners.
 
 ## 🎯 Training Modules
 
@@ -43,7 +43,7 @@
 - **SYB (Start Your Business)** - Transform ideas into actionable business plans
 - **IYB (Improve Your Business)** - Optimize and grow existing businesses
 - **EYB (Expand Your Business)** - Scale businesses to new markets and opportunities
-- **SIYB Game** - Interactive business simulation for hands-on learning
+- **Business Simulation Game** - Interactive business simulation for hands-on learning
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -109,7 +109,7 @@
 - **Multi-Module Training System** - Four comprehensive business training modules
 - **User Progress Tracking** - Monitor learning progress across all modules
 - **Group Booking System** - Minimum 9 participants for group sessions
-- **Interactive SIYB Game** - Business simulation with dynamic scenarios
+- **Interactive Business Simulation** - Business simulation with dynamic scenarios
 - **User Management** - Registration, authentication, and profile management
 - **Payment Processing** - Secure payment system for course enrollment
 - **Session Scheduling** - Flexible scheduling for training sessions
@@ -152,8 +152,8 @@ Clone this repository to your desired folder:
 
 ```bash
 cd my-folder
-git clone https://github.com/your-username/siyb-platform.git
-cd siyb-platform
+git clone https://github.com/your-username/mustard-steps-platform.git
+cd mustard-steps-platform
 ```
 
 ### Install
@@ -178,10 +178,10 @@ pip install -r requirements.txt
 sudo -u postgres psql
 
 # Create database and user
-CREATE DATABASE siyb_platform_db;
-CREATE USER siyb_user WITH PASSWORD 'siyb_password123';
-GRANT ALL PRIVILEGES ON DATABASE siyb_platform_db TO siyb_user;
-ALTER USER siyb_user CREATEDB;
+CREATE DATABASE msc_platform_db;
+CREATE USER msc_user WITH PASSWORD 'msc_password123';
+GRANT ALL PRIVILEGES ON DATABASE msc_platform_db TO msc_user;
+ALTER USER msc_user CREATEDB;
 \q
 ```
 
@@ -278,7 +278,7 @@ Deployment instructions will be added for:
 ## 🏗️ Project Structure <a name="project-structure"></a>
 
 ```
-siyb-platform/
+mustard-steps-platform/
 ├── backend/                 # Django REST API
 │   ├── accounts/           # User management
 │   ├── gyb/               # Generate Your Business Idea module
@@ -332,7 +332,7 @@ siyb-platform/
 
 ## 👥 Authors <a name="authors"></a>
 
-👤 **SIYB Platform Team**
+👤 **Mustard Steps Consulting Team**
 
 - GitHub: [@your-username](https://github.com/your-username)
 - LinkedIn: [Your LinkedIn](https://www.linkedin.com/in/your-profile/)
@@ -363,7 +363,7 @@ siyb-platform/
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/your-username/siyb-platform/issues).
+Feel free to check the [issues page](https://github.com/your-username/mustard-steps-platform/issues).
 
 ### Contributing Guidelines
 
@@ -387,7 +387,7 @@ If you like this project and find it helpful for your entrepreneurial journey, p
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-- **ILO (International Labour Organization)** - Original SIYB methodology
+- **ILO (International Labour Organization)** - Inspiration for business training methodologies
 - **Django Community** - Excellent web framework and documentation
 - **React Community** - Powerful frontend library and ecosystem
 - **All Contributors** - Everyone who helped build this platform

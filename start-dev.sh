@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# SIYB Platform Development Server Starter
-echo "Starting SIYB Platform Development Environment..."
+# Mustard Steps Consulting Development Server Starter
+echo "Starting Mustard Steps Consulting Development Environment..."
 
 # Check if virtual environment exists
 if [ ! -d ".venv" ]; then

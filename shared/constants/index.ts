@@ -1,5 +1,3 @@
-// Shared constants for SIYB Platform
-
 // API Configuration
 export const API_BASE_URL = 'http://localhost:8000/api';
 
@@ -8,8 +6,8 @@ export const getApiBaseUrl = (envUrl?: string): string => {
   return envUrl || API_BASE_URL;
 };
 
-// SIYB Modules
-export const SIYB_MODULES = {
+// Mustard Steps Consulting Modules
+export const MUSTARD_STEPS_MODULES = {
   GYB: {
     name: 'Generate Your Business Idea',
     slug: 'gyb',
