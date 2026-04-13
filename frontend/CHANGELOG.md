@@ -10,7 +10,6 @@
 - feat(frontend): add routing, corporate theme, and lottie animations
 - chore: rebrand platform to Mustard Steps Consulting
 
-
 ## [1.1.0] - 2026-03-25
 
 ### Changes
