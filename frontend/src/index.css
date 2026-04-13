@@ -4,10 +4,13 @@
 @theme {
   /* MSC Corporate palette */
   --color-msc-navy: #1b2a4a;
+  --color-msc-deep-navy: #000080;
   --color-msc-navy-dark: #111c30;
   --color-msc-mustard: #c5973a;
   --color-msc-mustard-light: #d4a843;
   --color-msc-mustard-dark: #a67e2e;
+  --color-msc-gold: #e1ad01;
+  --color-msc-gold-dark: #c99c01;
   --color-msc-slate: #64748b;
   --color-msc-surface: #f8fafc;
   --color-msc-border: #e2e8f0;
@@ -84,26 +87,28 @@ body {
 }
 
 /* ─── Typography ─────────────────────────────────────────────────────────── */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-weight: 700;
-  line-height: 1.2;
-  letter-spacing: -0.025em;
-  color: var(--color-msc-navy);
-}
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.025em;
+    color: var(--color-msc-navy);
+  }
 
-h1 {
-  font-size: clamp(2rem, 5vw, 3.25rem);
-}
-h2 {
-  font-size: clamp(1.5rem, 3vw, 2.25rem);
-}
-h3 {
-  font-size: clamp(1.125rem, 2vw, 1.375rem);
+  h1 {
+    font-size: clamp(2rem, 5vw, 3.25rem);
+  }
+  h2 {
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+  }
+  h3 {
+    font-size: clamp(1.125rem, 2vw, 1.375rem);
+  }
 }
 
 p {
@@ -133,6 +138,41 @@ video {
 }
 ::-webkit-scrollbar-thumb:hover {
   background: var(--color-msc-slate);
+}
+
+/* ─── Utility classes ────────────────────────────────────────────────────── */
+.hero-title-gradient {
+  background: linear-gradient(90deg, #e1ad01 0%, #c5973a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-texture {
+  background-image: repeating-linear-gradient(
+    90deg,
+    #fff 0,
+    #fff 1px,
+    transparent 0,
+    transparent 50%
+  );
+  background-size: 60px 60px;
+}
+
+.pillars-section {
+  background-color: #eef1f8;
+}
+
+.catalyst-section {
+  background-color: #dcddde;
+}
+
+.pillar-number {
+  font-size: 5rem;
+  background: linear-gradient(180deg, #e1ad01 0%, rgba(178, 190, 181, 0.3) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 /* ─── Selection ──────────────────────────────────────────────────────────── */
