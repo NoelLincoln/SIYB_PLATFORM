@@ -1,5 +1,20 @@
 # Backend Changelog
 
+## [1.1.0] - 2026-03-25
+
+### Changes
+
+- chore: release 1.1.0 - update changelogs
+- chore: rebrand platform to Mustard Steps Consulting
+
+
+## [1.1.0] - 2026-03-25
+
+### Changes
+
+- chore: rebrand platform to Mustard Steps Consulting
+
+
 ## [1.0.0] - 2026-01-15
 
 ### Changes

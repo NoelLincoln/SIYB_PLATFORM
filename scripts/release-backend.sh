@@ -1,18 +1,17 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-ENV_TARGET="${1:-}"
-VERSION="${2:-}"
+VERSION="${1:-}"
 
-if [[ -z "$ENV_TARGET" || -z "$VERSION" ]]; then
-  echo "Usage: $0 <uat|prod> <version>" >&2
+if [[ -z "$VERSION" ]]; then
+  echo "Usage: $0 <version>" >&2
   exit 1
 fi
 
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 
-echo "[backend] Running release steps for env: $ENV_TARGET (version $VERSION)"
+echo "[backend] Running release steps for version $VERSION"
 
 cd "$REPO_ROOT/backend"
 
@@ -61,8 +60,7 @@ TMP_FILE=$(mktemp)
   echo
   echo "### Changes"
   echo
-  printf '%s
-' "$CHANGE_LINES"
+  printf '%s\n' "$CHANGE_LINES"
   echo
   if [[ -f CHANGELOG.md ]]; then
     # Skip existing title line if present
