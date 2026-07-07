@@ -1,5 +1,13 @@
 # Frontend Changelog
 
+## [1.3.1] - 2026-07-08
+
+### Changes
+
+- fix(ui): match Juliet section background to Why Partner section navy
+- style: format changelog with prettier
+- chore: release 1.3.0 - update changelogs
+
 ## [1.3.0] - 2026-07-07
 
 ### Changes
