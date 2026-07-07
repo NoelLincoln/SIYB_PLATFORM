@@ -1,5 +1,12 @@
 # Backend Changelog
 
+## [1.3.0] - 2026-07-07
+
+### Changes
+
+- chore: release 1.2.0 - update changelogs
+
+
 ## [1.2.0] - 2026-04-14
 
 ### Changes

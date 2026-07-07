@@ -1,5 +1,13 @@
 # Frontend Changelog
 
+## [1.3.0] - 2026-07-07
+
+### Changes
+
+- feat(ui): revamp hero, pillars, contact and footer sections to match new design
+- chore: fix changelog formatting for 1.2.0
+- chore: release 1.2.0 - update changelogs
+
 ## [1.2.0] - 2026-04-14
 
 ### Changes
