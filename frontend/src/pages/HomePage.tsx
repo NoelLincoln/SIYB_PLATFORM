@@ -5,7 +5,6 @@ import heroImg from '@/assets/hero.svg';
 import getToKnowImg from '@/assets/get-to-know-j.svg';
 import catalystImg from '@/assets/catalyst-of-growth.svg';
 import approachImg from '@/assets/Approach.svg';
-import integratedIconImg from '@/assets/integrated-approach.svg';
 import ctaImg from '@/assets/cta-weight-alone.svg';
 import { Button } from '@/components/ui/button';
 import MustardPillars from '@/components/MustardPillars';
@@ -100,21 +99,15 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Mobile: full-bleed dark hero — hidden on lg+ */}
-      <section className="lg:hidden relative min-h-[88vh] flex flex-col justify-end">
-        {/* Background */}
-        <div className="absolute inset-0 overflow-hidden bg-black">
-          <img src={heroImg} alt="" className="w-full h-full object-cover" aria-hidden="true" />
-          <div className="absolute inset-0 bg-black/25" />
-        </div>
-
+      {/* Mobile: full-bleed hero — hidden on lg+ */}
+      <section className="lg:hidden relative min-h-[88vh] flex flex-col justify-end bg-[#0B2D4D]">
         {/* Content */}
         <div className="relative z-10 px-5 pb-28 flex flex-col items-center text-center gap-2">
           <motion.h1
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-            className="hero-title-gradient leading-[1.1] font-extrabold mb-1 filter-[drop-shadow(0_2px_12px_rgba(0,0,0,0.7))]"
+            className="hero-title-gradient font-['Montserrat'] font-bold text-[28px] sm:text-[36px] leading-[1.1] mb-1 filter-[drop-shadow(0_2px_12px_rgba(0,0,0,0.7))]"
           >
             Mustard Steps
             <br />
@@ -135,7 +128,7 @@ export default function HomePage() {
             initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.25, duration: 0.5 }}
-            className="text-white/70 text-sm leading-relaxed mt-1"
+            className="text-white/70 font-['Montserrat'] font-normal text-[14px] sm:text-[16px] leading-relaxed mt-1"
           >
             Helping individuals rise, teams align, and organizations transform.
           </motion.p>
@@ -151,17 +144,17 @@ export default function HomePage() {
           aria-hidden="true"
           className="absolute inset-0 w-full h-full object-cover opacity-20 pointer-events-none"
         />
-        <div className="relative max-w-3xl mx-auto px-5 sm:px-8">
+        <div className="relative max-w-3xl mx-auto lg:mx-0 px-5 sm:px-8 lg:px-16 xl:px-24">
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
           >
-            <h2 className="text-msc-deep-navy text-left mb-5">
+            <h2 className="text-msc-deep-navy text-center lg:text-left mb-5">
               The Catalyst Of Transformational Growth
             </h2>
-            <p className="text-slate-600 text-base leading-relaxed text-left">
+            <p className="text-slate-600 text-base leading-relaxed text-center lg:text-left">
               Mustard Steps Consulting Limited is a people centered training and facilitation
               company committed to unlocking individual and team potential through practical
               experiential learning. We create safe, inclusive spaces where authentic learning and
@@ -174,8 +167,8 @@ export default function HomePage() {
       {/* ─── Get To Know ──────────────────────────────────────────────────── */}
 
       <section className="bg-msc-deep-navy py-14 sm:py-20">
-        <div className="max-w-6xl mx-auto px-5 sm:px-8 lg:px-12">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+        <div className="max-w-6xl mx-auto lg:max-w-none lg:mx-0 px-5 sm:px-8 lg:px-16 xl:px-24">
+          <div className="grid grid-cols-1 lg:grid-cols-[795fr_400fr] gap-10 lg:gap-16 items-center">
             {/* Left — text */}
             <motion.div
               initial={{ opacity: 0, y: 16 }}
@@ -183,27 +176,38 @@ export default function HomePage() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
             >
-              <p className="text-white font-bold text-xl leading-snug">Get To Know</p>
-              <p className="text-msc-mustard font-bold text-xl mb-5">Juliet</p>
-
-              <p className="text-msc-gold text-sm underline underline-offset-4 decoration-msc-gold/40 mb-6">
-                Certified Cognitive Behavioral Therapist
+              <p className="text-msc-gold font-['Montserrat'] font-semibold text-[16px] md:text-[20px] lg:text-[24px] leading-snug mb-5 text-center lg:text-left">
+                Meet Juliet Muthiani
               </p>
 
-              <p className="text-white/85 text-sm leading-relaxed mb-5">
-                I specialize in helping individuals identify the root causes of their challenges and
-                develop practical, sustainable strategies for change. With a focus on clarity and
-                cognitive-behavioral foundations, I work alongside my clients to dismantle the
-                barriers to their mental well-being. My practice is built on the belief that
-                everyone deserves a structured, professional space to process their experiences and
-                gain a fresh perspective.
+              <p className="text-msc-gold font-['Montserrat'] font-medium text-[14px] md:text-[16px] lg:text-[18px] underline underline-offset-4 decoration-msc-gold/40 mb-6 text-center lg:text-left">
+                Founder & Lead Coach and Trainer
               </p>
 
-              <p className="text-white/85 text-sm leading-relaxed">
-                Through our sessions, we will focus on actionable insights that translate from our
-                calls into your everyday life. My commitment is to provide you with high-quality,
-                confidential care that respects your time and honors your journey toward mental
-                health.
+              <p className="text-white/85 font-['Montserrat'] font-normal text-[16px] leading-relaxed mb-5 text-center lg:text-left">
+                <span className="font-bold text-[20px]">
+                  Juliet is a Transformation and Growth Coach
+                </span>{' '}
+                who focuses on guiding Individuals and Teams Gain Clarity, Navigate Pivots,
+                Transform Possibilities and Grow with Purpose. With over 18 years of experience in
+                entrepreneurial training, team development and organizational capacity building, I
+                bless experiential learning with Neurol-Linguistic Programming (NLP) and Goal
+                Mapping to guide individuals and teams from small beginnings (transformation) to
+                impactful growth.
+              </p>
+
+              <p className="text-white/85 font-['Montserrat'] font-normal text-[16px] leading-relaxed mb-5 text-center lg:text-left">
+                Juliet is a certified NLP Master Practitioner, Goal Mapping Practitioner, ILO-SIYB
+                Trainer, Art of Hosting (AoH) Conversation host and a Trainer of Trainers (ToT)
+                certified by the German WASH Network, among other qualifications. Her experience,
+                drive and passion for people development has led her to traverse the Eastern Africa
+                region Coaching, Training and Facilitating team engagements in Kenya, Uganda,
+                Ethiopia.
+              </p>
+
+              <p className="text-white/85 font-['Montserrat'] font-normal text-[16px] leading-relaxed text-center lg:text-left">
+                She is a firm believer that growth is not just about awareness, but rather what you
+                do with that awareness.
               </p>
             </motion.div>
 
@@ -215,7 +219,11 @@ export default function HomePage() {
               transition={{ delay: 0.15, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
               className="flex justify-center lg:justify-end"
             >
-              <img src={getToKnowImg} alt="Juliet" className="w-64 sm:w-72 lg:w-96 h-auto" />
+              <img
+                src={getToKnowImg}
+                alt="Juliet"
+                className="w-64 sm:w-72 h-auto lg:w-[400px] lg:h-[400px]"
+              />
             </motion.div>
           </div>
         </div>
@@ -223,109 +231,89 @@ export default function HomePage() {
 
       <MustardPillars />
 
-      {/* ─── Integrated Approach + Upcoming Events ────────────────────────── */}
+      {/* ─── Upcoming Events ────────────────────────────────────────────────── */}
       <section className="bg-[#B2BEB5] py-14 sm:py-20">
         <div className="px-5 sm:px-8 lg:px-16 xl:px-24">
-          <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 items-stretch">
-            {/* Left — Integrated Approach card */}
-            <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-              className="lg:col-span-1 bg-white rounded-2xl p-6 sm:p-8 shadow-sm flex flex-col"
-            >
-              {/* Icon */}
-              <img src={integratedIconImg} alt="" aria-hidden="true" className="w-9 h-9 mb-5" />
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+            className="relative max-w-[750px] w-full mx-auto rounded-2xl overflow-hidden shadow-sm min-h-80 lg:min-h-0 flex flex-col justify-end bg-msc-navy"
+          >
+            {/* Background image */}
+            <img
+              src={approachImg}
+              alt=""
+              aria-hidden="true"
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+            {/* Dark overlay */}
+            <div className="absolute inset-0 bg-black/55" />
 
-              {/* Title */}
-              <p className="text-base font-medium mb-6 leading-snug">
-                <span className="text-msc-mustard font-semibold">Our Integrated Approach</span>
-                <span className="text-msc-navy">: The Mustard Steps Difference</span>
+            {/* Content */}
+            <div className="relative z-10 p-6 sm:p-8">
+              <p className="text-msc-gold font-semibold text-sm uppercase tracking-widest mb-3">
+                Upcoming Events.
+              </p>
+              <h3 className="text-white font-bold text-xl leading-snug mb-1">
+                Goal Mapping Africa Leadership Summit 1.0
+              </h3>
+              <p className="text-msc-gold font-medium text-sm leading-snug mb-4">
+                From Vision to Impact: Accelerating Africa&apos;s Growth
               </p>
 
-              {/* Items */}
-              <div className="space-y-4 flex-1">
-                {[
-                  {
-                    label: 'Human-Centered Learning',
-                    detail:
-                      'We place people at the core, ensuring learning is relevant, inclusive, and responsive to unique needs.',
-                  },
-                  {
-                    label: 'Proven Coaching Tools',
-                    detail:
-                      'Driven by NLP coaching, we ground organizational culture and drive behavior change.',
-                  },
-                  {
-                    label: 'Engaging Facilitation',
-                    detail:
-                      'Using Art of Hosting, we bring energy, neutrality, and clarity into every session, making complex topics accessible and actionable.',
-                  },
-                  {
-                    label: 'Tailored Solutions',
-                    detail:
-                      "We co-create every intervention to reflect your team's culture, goals, and context.",
-                  },
-                ].map((item) => (
-                  <div key={item.label} className="border-l-2 border-msc-gold pl-4">
-                    <p className="text-msc-navy font-semibold text-sm leading-snug">{item.label}</p>
-                    <p className="text-slate-500 text-sm leading-relaxed mt-0.5">{item.detail}</p>
-                  </div>
-                ))}
-              </div>
-            </motion.div>
+              <p className="text-white/75 font-['Montserrat'] font-medium text-[16px] leading-relaxed mb-4">
+                This is a premier convening of leaders, managers, coaches, trainers, educators, and
+                change makers committed to transforming vision into meaningful impact. Taking place
+                in Nairobi, Kenya, the Summit introduces the internationally acclaimed Goal Mapping
+                methodology, pioneered by Brian Mayne—a proven whole-brain approach that helps
+                individuals and organizations align their goals, actions, and outcomes.
+              </p>
+              <p className="text-white/75 font-['Montserrat'] font-medium text-[16px] leading-relaxed mb-4">
+                In a rapidly changing world where ambition often outpaces execution, this Summit
+                offers practical tools, powerful insights, and meaningful connections to help
+                participants bridge the gap between vision and results. Join fellow leaders from
+                across Africa to explore new ways of driving personal growth, organizational
+                excellence, and sustainable development.
+              </p>
+              <p className="text-white/75 font-['Montserrat'] font-medium text-[16px] leading-relaxed mb-4">
+                The Goal Mapping Leadership Summit 1.0 – 2027 is more than an event, it is a
+                movement toward a new standard of execution in Africa. Together, we can ensure that
+                every vision is backed by a clear, actionable map to success.
+              </p>
+              <p className="text-white/75 font-['Montserrat'] font-medium text-[16px] leading-relaxed mb-5">
+                We invite you to join us in Nairobi and become part of shaping a future where
+                Africa&apos;s ambition is matched by measurable impact.
+              </p>
 
-            {/* Right — Upcoming Events card */}
-            <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.15, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-              className="lg:col-span-3 relative rounded-2xl overflow-hidden shadow-sm min-h-80 lg:min-h-0 flex flex-col justify-end bg-msc-navy"
-            >
-              {/* Background image */}
-              <img
-                src={approachImg}
-                alt=""
-                aria-hidden="true"
-                className="absolute inset-0 w-full h-full object-cover"
-              />
-              {/* Dark overlay */}
-              <div className="absolute inset-0 bg-black/55" />
-
-              {/* Content */}
-              <div className="relative z-10 p-6 sm:p-8">
-                <p className="text-msc-gold font-semibold text-sm uppercase tracking-widest mb-3">
-                  Upcoming Events.
-                </p>
-                <h3 className="text-white font-bold text-xl leading-snug mb-3">
-                  Goal Mapping Africa Leadership Summit
-                </h3>
-                <p className="text-white/75 text-sm leading-relaxed mb-5">
-                  Goal Mapping is a structured system for setting and achieving goals by combining
-                  right-brain imaginative visioning with left-brain logical planning. It breaks
-                  large objectives into actionable, time-bound steps using visual tools to boost
-                  motivation and clarity — asking &apos;Who to define, prioritize, and create an
-                  emotional connection to goals.
-                </p>
-                <p className="text-white/60 text-xs">
-                  Secure your seat today.{' '}
-                  <a
-                    href="/contact"
-                    className="text-msc-gold underline underline-offset-2 font-medium"
-                  >
-                    Sign Up
-                  </a>
-                </p>
-              </div>
-            </motion.div>
-          </div>
+              <p className="text-white/60 text-xs mb-1">
+                Register here:{' '}
+                <a
+                  href="https://shorturl.at/ezLg9"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-msc-gold underline underline-offset-2 font-medium"
+                >
+                  https://shorturl.at/ezLg9
+                </a>
+              </p>
+              <p className="text-white/60 text-xs">
+                Email us:{' '}
+                <a
+                  href="mailto:gmafricasummit@mustardsteps.co.ke"
+                  className="text-msc-gold underline underline-offset-2 font-medium"
+                >
+                  gmafricasummit@mustardsteps.co.ke
+                </a>
+              </p>
+            </div>
+          </motion.div>
         </div>
       </section>
 
       {/* Why Partner */}
-      <section className="bg-msc-deep-navy py-14 sm:py-20">
+      <section className="bg-[#0B2D4D] py-14 sm:py-20">
         <div className="max-w-6xl mx-auto px-5 sm:px-8 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
             {/* Left — title + intro */}
@@ -334,16 +322,17 @@ export default function HomePage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+              className="text-center"
             >
-              <h2 className="text-white leading-tight mb-6">
+              <h2 className="text-white leading-tight mb-6 text-center">
                 Why Partner with <br />
                 <span className="text-msc-gold">Mustard</span> Steps?
               </h2>
-              <p className="text-white/80 text-sm leading-relaxed mb-2">
-                Our approach does more than solve problems — it unlocks potential, strengthens
+              <p className="text-white/80 text-sm lg:font-['Montserrat'] lg:font-normal lg:text-[18px] leading-relaxed mb-2">
+                Our approach does more than solve problems- it unlocks potential, strengthens
                 culture, and cultivates lasting synergy.
               </p>
-              <p className="text-white/80 text-sm leading-relaxed">
+              <p className="text-white/80 text-sm lg:font-['Montserrat'] lg:font-normal lg:text-[18px] leading-relaxed">
                 Through tailored programs, we help organizations to:
               </p>
             </motion.div>
@@ -376,7 +365,12 @@ export default function HomePage() {
               ].map((item) => (
                 <div key={item.label} className="border-l-2 border-msc-gold pl-4">
                   <p className="text-white text-sm leading-relaxed">
-                    <span className="font-bold">{item.label}</span> {item.detail}
+                    <span className="font-bold lg:font-['Montserrat'] lg:font-bold lg:text-[20px]">
+                      {item.label}
+                    </span>{' '}
+                    <span className="lg:font-['Montserrat'] lg:font-normal lg:text-[18px]">
+                      {item.detail}
+                    </span>
                   </p>
                 </div>
               ))}
@@ -385,58 +379,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ─── Voices of Progress ───────────────────────────────────────────── */}
-      <section className="pillars-section py-14 sm:py-20">
-        <div className="max-w-5xl mx-auto px-5 sm:px-8 lg:px-12">
-          <motion.h2
-            initial={{ opacity: 0, y: 12 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.4 }}
-            className="text-msc-deep-navy text-center mb-12"
-          >
-            Voices of Progress
-          </motion.h2>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
-            {[
-              {
-                quote:
-                  "I was hesitant about starting therapy, but the focus on practical steps helped me manage my burnout in a way I didn't think was possible. I finally feel like I'm back in the driver's seat of my own life.",
-                name: 'Jabar w. Stevens',
-              },
-              {
-                quote:
-                  "The transition from 'surviving the week' to 'building a legacy' started here. This wasn't about just mental health, it was about my mental strategy. Reclaiming my agency allowed me to put my energy into the projects that actually matter, creating a ripple effect of growth across both my personal and professional life.",
-                name: 'Chad Michaels',
-              },
-            ].map((item, i) => (
-              <motion.div
-                key={item.name}
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.15, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-                className="flex flex-col"
-              >
-                {/* Opening quote */}
-                <span className="text-4xl text-msc-navy leading-none font-serif mb-2 block">
-                  &ldquo;
-                </span>
-
-                {/* Quote text */}
-                <p className="text-slate-700 text-sm leading-relaxed flex-1 mb-6">{item.quote}</p>
-
-                {/* Name */}
-                <p className="text-msc-navy font-semibold text-sm text-center">{item.name}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* ─── CTA ──────────────────────────────────────────────────────────── */}
-      <section className="bg-msc-deep-navy py-16 sm:py-24">
+      <section className="bg-[#0B2D4D] py-16 sm:py-24 mt-10">
         <div className="max-w-6xl mx-auto px-5 sm:px-8 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
             {/* Left — text + button */}
@@ -451,7 +395,7 @@ export default function HomePage() {
                 You don&apos;t have to carry the weight alone
               </h2>
 
-              <p className="text-white/75 text-sm leading-relaxed mb-10">
+              <p className="text-white font-['Montserrat'] font-normal text-base leading-normal tracking-normal mb-10">
                 Whether you&apos;re navigating a difficult season or looking for a fresh
                 perspective, a clearer path is just one conversation away.
               </p>
