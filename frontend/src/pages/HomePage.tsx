@@ -166,7 +166,7 @@ export default function HomePage() {
 
       {/* ─── Get To Know ──────────────────────────────────────────────────── */}
 
-      <section className="bg-msc-deep-navy py-14 sm:py-20">
+      <section className="bg-[#0B2D4D] py-14 sm:py-20">
         <div className="max-w-6xl mx-auto lg:max-w-none lg:mx-0 px-5 sm:px-8 lg:px-16 xl:px-24">
           <div className="grid grid-cols-1 lg:grid-cols-[795fr_400fr] gap-10 lg:gap-16 items-center">
             {/* Left — text */}
