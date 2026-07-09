@@ -19,7 +19,7 @@ export default function HomePage() {
       {/* Desktop: split layout — hidden on mobile */}
       <section className="hidden lg:grid lg:grid-cols-2 min-h-screen">
         {/* Left — white content panel */}
-        <div className="bg-white relative flex items-center px-12 xl:px-20 py-24 overflow-hidden">
+        <div className="bg-[#0B2D4D] relative flex items-center px-12 xl:px-20 py-24 overflow-hidden">
           {/* Decorative dot grid */}
           <svg
             className="absolute bottom-8 left-8 opacity-20"
@@ -58,19 +58,17 @@ export default function HomePage() {
               initial={{ opacity: 0, y: 14 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.15, duration: 0.5 }}
-              className="text-msc-slate text-lg font-normal mb-3"
+              className="text-white text-lg font-normal mb-3"
             >
               Empowering Growth.{' '}
-              <span className="text-msc-deep-navy font-normal whitespace-nowrap">
-                Driving Impact.
-              </span>
+              <span className="text-msc-gold font-semibold whitespace-nowrap">Driving Impact.</span>
             </motion.p>
 
             <motion.p
               initial={{ opacity: 0, y: 14 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.25, duration: 0.5 }}
-              className="text-slate-500 text-base leading-relaxed mb-10"
+              className="text-white/70 text-base leading-relaxed mb-10"
             >
               Helping individuals rise, teams align, and organizations transform.
             </motion.p>
@@ -100,7 +98,7 @@ export default function HomePage() {
       </section>
 
       {/* Mobile: full-bleed hero — hidden on lg+ */}
-      <section className="lg:hidden relative min-h-[88vh] flex flex-col justify-end bg-[#0B2D4D]">
+      <section className="lg:hidden relative min-h-[60vh] flex flex-col justify-end bg-[#0B2D4D]">
         {/* Content */}
         <div className="relative z-10 px-5 pb-28 flex flex-col items-center text-center gap-2">
           <motion.h1
@@ -166,7 +164,7 @@ export default function HomePage() {
 
       {/* ─── Get To Know ──────────────────────────────────────────────────── */}
 
-      <section className="bg-[#0B2D4D] py-14 sm:py-20">
+      <section className="bg-[#0B2D4D] py-14 sm:py-20 lg:py-12">
         <div className="max-w-6xl mx-auto lg:max-w-none lg:mx-0 px-5 sm:px-8 lg:px-16 xl:px-24">
           <div className="grid grid-cols-1 lg:grid-cols-[795fr_400fr] gap-10 lg:gap-16 items-center">
             {/* Left — text */}
@@ -176,15 +174,18 @@ export default function HomePage() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
             >
-              <p className="text-msc-gold font-['Montserrat'] font-semibold text-[16px] md:text-[20px] lg:text-[24px] leading-snug mb-5 text-center lg:text-left">
-                Meet Juliet Muthiani
+              <p className="text-white font-['Montserrat'] font-semibold text-[16px] md:text-[20px] lg:text-[20px] leading-snug text-center lg:text-left">
+                Meet
+              </p>
+              <p className="text-msc-gold font-['Montserrat'] font-bold text-[20px] md:text-[26px] lg:text-[28px] leading-snug mb-4 lg:mb-3 text-center lg:text-left">
+                Juliet Muthiani
               </p>
 
-              <p className="text-msc-gold font-['Montserrat'] font-medium text-[14px] md:text-[16px] lg:text-[18px] underline underline-offset-4 decoration-msc-gold/40 mb-6 text-center lg:text-left">
+              <p className="text-msc-gold font-['Montserrat'] font-medium text-[14px] md:text-[16px] lg:text-[18px] underline underline-offset-4 decoration-msc-gold/40 mb-6 lg:mb-4 text-center lg:text-left">
                 Founder & Lead Coach and Trainer
               </p>
 
-              <p className="text-white/85 font-['Montserrat'] font-normal text-[16px] leading-relaxed mb-5 text-center lg:text-left">
+              <p className="text-white/85 font-['Montserrat'] font-normal text-[16px] leading-relaxed mb-5 lg:mb-2 text-center lg:text-left">
                 <span className="font-bold text-[20px]">
                   Juliet is a Transformation and Growth Coach
                 </span>{' '}
@@ -196,7 +197,7 @@ export default function HomePage() {
                 impactful growth.
               </p>
 
-              <p className="text-white/85 font-['Montserrat'] font-normal text-[16px] leading-relaxed mb-5 text-center lg:text-left">
+              <p className="text-white/85 font-['Montserrat'] font-normal text-[16px] leading-relaxed mb-5 lg:mb-2 text-center lg:text-left">
                 Juliet is a certified NLP Master Practitioner, Goal Mapping Practitioner, ILO-SIYB
                 Trainer, Art of Hosting (AoH) Conversation host and a Trainer of Trainers (ToT)
                 certified by the German WASH Network, among other qualifications. Her experience,
