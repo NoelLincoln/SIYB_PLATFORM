@@ -27,7 +27,7 @@ const pillars = [
 export default function MustardPillars() {
   return (
     <section className="pillars-section py-16 sm:py-20">
-      <div className="max-w-6xl mx-auto px-4 sm:px-8 lg:px-12">
+      <div className="max-w-6xl lg:max-w-none mx-auto px-4 sm:px-8 lg:px-8">
         {/* Section heading */}
         <motion.div
           initial={{ opacity: 0, y: 12 }}
@@ -42,15 +42,13 @@ export default function MustardPillars() {
         </motion.div>
 
         {/* Cards wrapper — narrower than the section, single non-repeating SVG overlay */}
-        <div
-          className="relative mx-auto max-w-4xl px-6 sm:px-10 lg:px-16"
-          style={{
-            backgroundImage: `url(${pillarsBg})`,
-            backgroundRepeat: 'no-repeat',
-            backgroundPosition: 'center',
-            backgroundSize: '480px 486px',
-          }}
-        >
+        <div className="relative mx-auto max-w-4xl lg:max-w-none px-6 sm:px-10 lg:px-0">
+          <img
+            src={pillarsBg}
+            alt=""
+            aria-hidden="true"
+            className="absolute inset-0 w-full h-full object-cover opacity-20 pointer-events-none"
+          />
           <div className="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {pillars.map((pillar, i) => (
               <motion.div
@@ -59,7 +57,7 @@ export default function MustardPillars() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.15, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-                className="flex flex-col items-center gap-[7.5px] bg-[#00415D]/10 border-l-2 border-[#00415D] rounded-[7.5px] px-[10.5px] py-[7.5px] text-center"
+                className="flex flex-col items-center gap-[7.5px] bg-[#00415D]/10 border-l-2 border-[#00415D] rounded-[7.5px] px-[10.5px] py-[7.5px] text-center lg:w-68 lg:h-45.5 lg:mx-auto lg:justify-center"
               >
                 <p className="text-msc-gold font-bold text-5xl leading-none">{pillar.letter}</p>
                 <h3 className="text-msc-navy font-bold text-lg leading-snug lg:font-['Montserrat'] lg:font-semibold lg:text-[20px]">
