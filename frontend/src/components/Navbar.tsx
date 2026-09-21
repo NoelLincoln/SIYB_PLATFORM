@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, Phone } from 'lucide-react';
+import { Menu, Phone, X } from 'lucide-react';
 import logoImg from '@/assets/logo.svg';
 import { Button } from '@/components/ui/button';
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { Sheet, SheetClose, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -31,8 +31,26 @@ export default function Navbar() {
                   <span className="sr-only">Toggle menu</span>
                 </Button>
               </SheetTrigger>
-              <SheetContent side="left" className="w-64 bg-white border-r border-msc-border">
-                <div className="flex flex-col gap-4 mt-8">
+              <SheetContent
+                side="left"
+                hideClose
+                className="w-64 bg-white border-r border-msc-border"
+              >
+                {/* Sits exactly where the hamburger is: navbar has px-4 (16px) and is h-16
+                    (64px) tall, so a 36px icon button centres at left-4 / top-3.5. Keeping
+                    these in sync is what stops the button jumping when the sheet opens. */}
+                <SheetClose asChild>
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    className="absolute left-4 top-3.5 text-msc-gold hover:bg-msc-surface hover:text-msc-gold"
+                  >
+                    <X className="h-5 w-5" />
+                    <span className="sr-only">Close menu</span>
+                  </Button>
+                </SheetClose>
+
+                <div className="flex flex-col gap-4 mt-12">
                   <Link
                     to="/"
                     onClick={() => setOpen(false)}
