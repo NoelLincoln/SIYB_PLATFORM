@@ -1,5 +1,12 @@
 # Backend Changelog
 
+## [1.5.0] - 2026-09-21
+
+### Changes
+
+- No code changes since last release.
+
+
 ## [1.3.1] - 2026-07-08
 
 ### Changes
