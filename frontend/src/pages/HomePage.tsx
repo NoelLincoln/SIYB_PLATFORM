@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Phone } from 'lucide-react';
-import heroImg from '@/assets/hero.svg';
 import getToKnowImg from '@/assets/get-to-know-j.svg';
 import catalystImg from '@/assets/catalyst-of-growth.svg';
 import approachImg from '@/assets/Approach.svg';
@@ -14,180 +13,108 @@ import MustardPillars from '@/components/MustardPillars';
 export default function HomePage() {
   return (
     <div className="bg-white">
-      {/* Hero */}
-
-      {/* Desktop: split layout — hidden on mobile */}
-      <section className="hidden lg:grid lg:grid-cols-2 min-h-screen">
-        {/* Left — white content panel */}
-        <div className="bg-[#0B2D4D] relative flex items-center px-12 xl:px-20 py-24 overflow-hidden">
-          {/* Decorative dot grid */}
-          <svg
-            className="absolute bottom-8 left-8 opacity-20"
-            width="120"
-            height="120"
-            viewBox="0 0 120 120"
-            fill="none"
-            aria-hidden="true"
-          >
-            {[0, 1, 2, 3, 4].flatMap((row) =>
-              [0, 1, 2, 3, 4].map((col) => (
-                <circle
-                  key={`${row}-${col}`}
-                  cx={col * 24 + 12}
-                  cy={row * 24 + 12}
-                  r="3"
-                  fill="#c5973a"
-                />
-              ))
-            )}
-          </svg>
-
-          <div className="relative max-w-lg">
-            <motion.h1
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-              className="hero-title-gradient leading-[1.1] mb-5"
-            >
-              Mustard Steps
-              <br />
-              Consulting.
-            </motion.h1>
-
-            <motion.p
-              initial={{ opacity: 0, y: 14 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.15, duration: 0.5 }}
-              className="text-white text-lg font-normal mb-3"
-            >
-              Empowering Growth.{' '}
-              <span className="text-msc-gold font-semibold whitespace-nowrap">Driving Impact.</span>
-            </motion.p>
-
-            <motion.p
-              initial={{ opacity: 0, y: 14 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.25, duration: 0.5 }}
-              className="text-white/70 text-base leading-relaxed mb-10"
-            >
-              Helping individuals rise, teams align, and organizations transform.
-            </motion.p>
-
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.35, duration: 0.45 }}
-            >
-              <Button size="lg" variant="mustard" className="rounded-full" asChild>
-                <Link to="/contact">
-                  Book a call <Phone />
-                </Link>
-              </Button>
-            </motion.div>
-          </div>
-        </div>
-
-        {/* Right — hero image */}
-        <div className="relative overflow-hidden">
-          <img
-            src={heroImg}
-            alt="Mustard Steps Consulting"
-            className="absolute inset-0 w-full h-full object-cover"
-          />
-        </div>
-      </section>
-
-      {/* Mobile: full-bleed hero — hidden on lg+ */}
-      <section className="lg:hidden relative min-h-[60vh] flex flex-col justify-end bg-[#0B2D4D]">
-        {/* Content */}
-        <div className="relative z-10 px-5 pb-28 flex flex-col items-center text-center gap-2">
+      {/* Hero — full-bleed, centred */}
+      <section className="relative bg-[#0B2D4D] min-h-[calc(100svh-4rem)] flex items-center justify-center overflow-hidden px-5 sm:px-8 py-16 sm:py-20">
+        <div className="relative z-10 w-full max-w-3xl mx-auto flex flex-col items-center text-center">
           <motion.h1
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-            className="hero-title-gradient font-['Montserrat'] font-bold text-[28px] sm:text-[36px] leading-[1.1] mb-1 filter-[drop-shadow(0_2px_12px_rgba(0,0,0,0.7))]"
+            className="text-white text-balance leading-[1.1] mb-5"
           >
-            Mustard Steps
-            <br />
-            Consulting.
+            <span className="hero-title-gradient">Mustard</span> Steps Consulting.
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.15, duration: 0.5 }}
-            className="text-white text-base font-normal"
+            className="text-white text-lg sm:text-xl font-normal text-balance mb-4"
           >
-            Empowering Growth.{' '}
-            <span className="text-msc-gold font-semibold whitespace-nowrap">Driving Impact.</span>
+            Empowering Growth. Driving Impact.
           </motion.p>
 
           <motion.p
             initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.25, duration: 0.5 }}
-            className="text-white/70 font-['Montserrat'] font-normal text-[14px] sm:text-[16px] leading-relaxed mt-1"
+            className="text-white/70 text-base leading-relaxed text-balance mb-9"
           >
             Helping individuals rise, teams align, and organizations transform.
           </motion.p>
-        </div>
-      </section>
 
-      {/* Catalyst  */}
-      <section className="catalyst-section relative overflow-hidden py-14 sm:py-20">
-        {/* Background illustration */}
-        <img
-          src={catalystImg}
-          alt=""
-          aria-hidden="true"
-          className="absolute inset-0 w-full h-full object-cover opacity-20 pointer-events-none"
-        />
-        <div className="relative max-w-3xl mx-auto lg:mx-0 px-5 sm:px-8 lg:px-16 xl:px-24">
           <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.35, duration: 0.45 }}
           >
-            <h2 className="text-msc-deep-navy text-center lg:text-left mb-5">
-              The Catalyst Of Transformational Growth
-            </h2>
-            <p className="text-slate-600 text-base leading-relaxed text-center lg:text-left">
-              Mustard Steps Consulting Limited is a people centered training and facilitation
-              company committed to unlocking individual and team potential through practical
-              experiential learning. We create safe, inclusive spaces where authentic learning and
-              transformation flourish.
-            </p>
+            <Button size="lg" variant="mustard" className="rounded-full" asChild>
+              <Link to="/contact">
+                Book a call <Phone />
+              </Link>
+            </Button>
           </motion.div>
         </div>
       </section>
 
-      {/* ─── Get To Know ──────────────────────────────────────────────────── */}
+      {/* ─── Catalyst + Meet Juliet ──────────────────────────────────────── */}
+      <section className="catalyst-section relative overflow-hidden py-14 sm:py-20">
+        {/* Decorative network illustration — behind the left column */}
+        <img
+          src={catalystImg}
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-y-0 left-0 w-full lg:w-1/2 h-full object-cover opacity-20 pointer-events-none"
+        />
 
-      <section className="bg-[#0B2D4D] py-14 sm:py-20 lg:py-12">
-        <div className="max-w-6xl mx-auto lg:max-w-none lg:mx-0 px-5 sm:px-8 lg:px-16 xl:px-24">
-          <div className="grid grid-cols-1 lg:grid-cols-[795fr_400fr] gap-10 lg:gap-16 items-center">
-            {/* Left — text */}
+        <div className="relative px-5 sm:px-8 lg:px-16 xl:px-24">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 xl:gap-20 items-start">
+            {/* Left — Catalyst */}
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
             >
-              <p className="text-white font-['Montserrat'] font-semibold text-[16px] md:text-[20px] lg:text-[20px] leading-snug text-center lg:text-left">
+              <h2 className="text-msc-deep-navy text-center lg:text-left mb-5">
+                The Catalyst Of Transformational Growth
+              </h2>
+              <p className="text-slate-600 text-base leading-relaxed text-center lg:text-left">
+                Mustard Steps Consulting Limited is a people centered training and facilitation
+                company committed to unlocking individual and team potential through practical
+                experiential learning. We create safe, inclusive spaces where authentic learning and
+                transformation flourish.
+              </p>
+
+              <img
+                src={getToKnowImg}
+                alt="Juliet"
+                className="mt-10 mx-auto lg:mx-0 w-56 sm:w-64 lg:w-90 h-auto"
+              />
+            </motion.div>
+
+            {/* Right — Meet Juliet */}
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.15, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+            >
+              <p className="text-msc-gold font-['Montserrat'] font-normal text-[16px] md:text-[20px] leading-snug text-center lg:text-left">
                 Meet
               </p>
               <p className="text-msc-gold font-['Montserrat'] font-bold text-[20px] md:text-[26px] lg:text-[28px] leading-snug mb-4 lg:mb-3 text-center lg:text-left">
                 Juliet Muthiani
               </p>
 
-              <p className="text-msc-gold font-['Montserrat'] font-medium text-[14px] md:text-[16px] lg:text-[18px] underline underline-offset-4 decoration-msc-gold/40 mb-6 lg:mb-4 text-center lg:text-left">
+              <p className="text-msc-gold font-['Montserrat'] font-medium text-[14px] md:text-[16px] lg:text-[18px] underline underline-offset-4 decoration-msc-gold/40 mb-6 lg:mb-5 text-center lg:text-left">
                 Founder & Lead Coach and Trainer
               </p>
 
-              <p className="text-white/85 font-['Montserrat'] font-normal text-[16px] leading-relaxed mb-5 lg:mb-2 text-center lg:text-left">
-                <span className="font-bold text-[20px]">
-                  Juliet is a Transformation and Growth Coach
+              <p className="text-slate-700 font-['Montserrat'] font-normal text-[16px] leading-relaxed mb-4 text-center lg:text-left">
+                <span className="font-bold text-msc-deep-navy">Juliet</span> is a{' '}
+                <span className="font-bold text-msc-deep-navy">
+                  Transformation and Growth Coach
                 </span>{' '}
                 who focuses on guiding Individuals and Teams Gain Clarity, Navigate Pivots,
                 Transform Possibilities and Grow with Purpose. With over 18 years of experience in
@@ -197,7 +124,7 @@ export default function HomePage() {
                 impactful growth.
               </p>
 
-              <p className="text-white/85 font-['Montserrat'] font-normal text-[16px] leading-relaxed mb-5 lg:mb-2 text-center lg:text-left">
+              <p className="text-slate-700 font-['Montserrat'] font-normal text-[16px] leading-relaxed mb-4 text-center lg:text-left">
                 Juliet is a certified NLP Master Practitioner, Goal Mapping Practitioner, ILO-SIYB
                 Trainer, Art of Hosting (AoH) Conversation host and a Trainer of Trainers (ToT)
                 certified by the German WASH Network, among other qualifications. Her experience,
@@ -206,25 +133,10 @@ export default function HomePage() {
                 Ethiopia.
               </p>
 
-              <p className="text-white/85 font-['Montserrat'] font-normal text-[16px] leading-relaxed text-center lg:text-left">
+              <p className="text-slate-700 font-['Montserrat'] font-normal text-[16px] leading-relaxed text-center lg:text-left">
                 She is a firm believer that growth is not just about awareness, but rather what you
                 do with that awareness.
               </p>
-            </motion.div>
-
-            {/* Right — illustration */}
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.15, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-              className="flex justify-center lg:justify-end"
-            >
-              <img
-                src={getToKnowImg}
-                alt="Juliet"
-                className="w-64 sm:w-72 h-auto lg:w-[400px] lg:h-[400px]"
-              />
             </motion.div>
           </div>
         </div>
