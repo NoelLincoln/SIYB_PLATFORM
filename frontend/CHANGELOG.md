@@ -1,5 +1,11 @@
 # Frontend Changelog
 
+## [1.5.0] - 2026-09-21
+
+### Changes
+
+- feat: rework landing page sections and add frontend test suite
+
 ## [1.3.1] - 2026-07-08
 
 ### Changes
